@@ -3,10 +3,10 @@
 </template>
 
 <script>
-export default ({
+export default {
     name:'BookItem',
     props: ['book'],
-})
+}
 </script>
 <style scoped>
     li{
