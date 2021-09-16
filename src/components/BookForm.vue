@@ -1,5 +1,5 @@
 <template>
-    <form class="" action="#" method="post" @submit.prevent="bookSubmit">
+    <form v-on:submit.prevent="bookSubmit(bookTitle, bookAuthor)" class="" action="#" method="post" >
         <input type="text" v-model="bookTitle" name="title" value="" placeholder="Book Titile">
         <input type="text" v-model="bookAuthor" name="author" value="" placeholder="Book Author">
         <button type="submit" name="button">Add Book</button>
@@ -9,7 +9,7 @@
 <script>
 export default {
     name:'BookForm',
-    props:['book'],
+    props:['books'],
     data() {
         return{
             bookTitle: '',
@@ -17,9 +17,7 @@ export default {
         }
     },
     methods: {
-        bookSubmit() {
-            bookTitle,
-            bookAuthor,
+        bookSubmit(bookTitle, bookAuthor) {
             this.$emit('addBook', bookTitle, bookAuthor);
         }
     },
